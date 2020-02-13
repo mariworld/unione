@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   skip_before_action :authorized, only: [:new, :create]
+  before_filter :authenticate_user!
+  before_filter :admin_only, :except => :show
   
   def new
     @user = User.new

@@ -2,7 +2,7 @@
 <% @groups.each do |group| %>
 <h2 style="color:pink;"><ul> <%= link_to group.name, group_path(group) %> </ul></h2>
 <%= button_to "Check Out this Unione", group_path(group), method: :get%>
-<%= button_to "Delete this Unione", group_path(group), method: :delete%>
+<%= button_to "Delete this Unione", group_path(group), method: :delete%> 
 
 
 <%end%><br>
