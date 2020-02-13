@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-    enum role: [:user, :vip, :admin]
-    after_initialize :set_default_role, :if => :new_record?
-    has_one_attached :avatar
+    # enum role: [:user, :vip, :admin]
+    # after_initialize :set_default_role, :if => :new_record?
+    # has_one_attached :avatar
     has_many :posts
     has_many :groups, through: :posts
     #has_many :comments
@@ -11,7 +11,7 @@ class User < ApplicationRecord
     validates :username, presence: true
     has_secure_password
 
-    def set_default_role
-        self.role ||= :user
-      end
+    # def set_default_role
+    #     self.role ||= :user
+    #   end
 end
