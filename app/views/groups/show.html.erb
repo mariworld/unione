@@ -1,8 +1,6 @@
 <div style="color:pink;">
   <h1 style="color:pink; font-weight:bold;"><%= @group.name %></h1>
-  <h2 style="color:pink;"><%= @group.description %></h2>
-
-  <img src="https://mymodernmet.com/wp/wp-content/uploads/2019/02/dog-pack-walking-feat-big.jpg" alt="Picture goes here" width="300" height="200"> 
+  <p style="color:pink;"><%= @group.description %></p>
 
 
   <%# <%= button_to "Edit Unione", edit_group_path, method: :get%>
@@ -24,6 +22,7 @@
   </div><br>
 
   <div>
+  <%= button_to "Create a Post", new_post_path, method: :get %>
   <%= button_to "Log Out", logout_path, method: :delete%>
   <%= button_to "Main Menu", welcome_path, method: :get%>
   </div>

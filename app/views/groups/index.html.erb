@@ -1,7 +1,7 @@
 <h1>All Uniones</h1>
 <% @groups.each do |group| %>
-<ul> <%= link_to group.name, group_path(group) %> </ul>
-<%= button_to "Join this Unione", group_path(group), method: :get%>
+<h2 style="color:pink;"><ul> <%= link_to group.name, group_path(group) %> </ul></h2>
+<%= button_to "Check Out this Unione", group_path(group), method: :get%>
 <%= button_to "Delete this Unione", group_path(group), method: :delete%>
 
 

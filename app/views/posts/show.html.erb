@@ -1,7 +1,7 @@
 <div style="color:pink;">
-<h1>POSTS</h1>
-<h2><%= @post.user.username.upcase%>:</h2> 
-    <p><%= @post.message %></p>
+<h2>POSTS</h2>
+<p><%= @post.user.username.upcase%>:</p> 
+    <p>"<%= @post.message %>"</p>
 <div style="color:yellow; font-size:14px;" >
     <p>----->
     <%= link_to @post.group.name, group_path(@post.group) %>
