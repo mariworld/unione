@@ -1,0 +1,12 @@
+<div style="color:pink;">
+<h1>POSTS</h1>
+<h2><%= @post.user.username.upcase%>:</h2> 
+    <p><%= @post.message %></p>
+<div style="color:yellow; font-size:14px;" >
+    <p>----->
+    <%= link_to @post.group.name, group_path(@post.group) %>
+    </p>
+</div>
+
+ <%= button_to "Log Out", logout_path, method: :delete%>
+ </div>

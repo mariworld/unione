@@ -1,3 +1,7 @@
 class Group < ApplicationRecord
-    has_many :users
+    has_many :posts
+    has_many :users, through: :posts
+    #has_many :characters
+    validates :name, uniqueness: true
+    validates :name, presence: true
 end

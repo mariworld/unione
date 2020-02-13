@@ -1,0 +1,30 @@
+<div style="color:pink;">
+  <h1 style="color:pink; font-weight:bold;"><%= @group.name %></h1>
+  <h2 style="color:pink;"><%= @group.description %></h2>
+
+  <img src="https://mymodernmet.com/wp/wp-content/uploads/2019/02/dog-pack-walking-feat-big.jpg" alt="Picture goes here" width="300" height="200"> 
+
+
+  <%# <%= button_to "Edit Unione", edit_group_path, method: :get%>
+  <%# <%= button_to "Delete Unione", group_path, method: :delete%> 
+  <%# <%= form_tag groups_path do %>
+    <%# <%= text_field_tag :posts %>
+    <%# <%= submit_tag("Post") %>
+
+
+  <div class="FixedHeightContainer">
+    <h2 style="color:white;">Talk to <%= @group.name %> </h2>
+    <div class="Content" style="font-size:16px;">
+      <% @group.posts.each do |post| %>
+      <ul><%= post.user.username %>: <%= post.message %></ul>
+      <%end%>
+    
+    </div>
+
+  </div><br>
+
+  <div>
+  <%= button_to "Log Out", logout_path, method: :delete%>
+  <%= button_to "Main Menu", welcome_path, method: :get%>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<h1>Name: <%= @character.name %></h1>
+<%# <h2>Group: <%= @character.group.name %>
+
+<%= button_to "Go to Group", group_path, method: :get%>
+<%= button_to "Edit Character", edit_character_path, method: :get%>
+<%= button_to "Delete Character", character_path(@character), :method => :delete%>
+

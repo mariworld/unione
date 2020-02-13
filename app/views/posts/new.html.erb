@@ -1,0 +1,9 @@
+<h1 style="color:pink;">Post in the Unione</h1>
+
+
+<%= form_for @post do |f|%>
+  <h2 style="color:pink;"><%= f.label :message%><br></h2>
+  <%= f.text_field :message%><br>
+  <%= f.collection_select :group_id, Group.all, :id, :name%>
+  <%= f.submit %>
+<%end%>

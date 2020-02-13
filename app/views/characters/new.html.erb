@@ -1,0 +1,8 @@
+<h1>New Character</h1>
+<%= form_for @character do |f|%>
+    <%= f.label :name%><br>
+    <%= f.text_field :name%><br>
+    <h2>Join a group</h2>
+    <%= f.collection_select :group_id, Group.all, :id, :name%><br>
+    <%= f.submit %>
+<%end%>

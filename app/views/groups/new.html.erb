@@ -1,2 +1,10 @@
-<h1>Groups#new</h1>
-<p>Find me in app/views/groups/new.html.erb</p>
+<div style="color:pink;">
+<h1>Create Your Unione</h1>
+<%= form_for @group do |f|%>
+  <%= f.label :name%><br>
+  <%= f.text_field :name%><br>
+  <%= f.label :description%><br>
+  <%= f.text_field :description%><br>
+  <%= f.submit %>
+<%end%>
+</div>

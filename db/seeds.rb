@@ -5,22 +5,27 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+Group.destroy_all
+Comment.destroy_all
+Post.destroy_all
 
 g1 = Group.create(name: "The Dogans")
 g2 = Group.create(name: "Moon Lit")
 
-dert = User.create(username: "Derty", password_digest: "123", group_id: g1.id)
-sarka = User.create(username: "Sarka", password_digest: "123", group_id: g2.id)
-rary = User.create(username: "Rary", password_digest: "123", group_id: g2.id)
-hal = User.create(username: "hal", password_digest: "123", group_id: Group.all.first.id)
+dert = User.create(username: "Derty", password_digest: "123")
+sarka = User.create(username: "Sarka", password_digest: "123")
+rary = User.create(username: "Rary", password_digest: "123")
+hal = User.create(username: "hal", password_digest: "123")
 # taro = Artist.create(name: "Taro", age: 26)
 # jimmy = Artist.create(name: "Jimmy Lit", age: 27)
 
 
-p1 = Post.create(user_id: dert.id, message:"What's the dealll??")
-p2 = Post.create(user_id: sarka.id, message:"I'm in here")
-p3 = Post.create(user_id: hal.id, message:"I'm in here")
+p1 = Post.create(user_id: dert.id, group_id: g1.id, message:"What's the dealll??")
+p2 = Post.create(user_id: sarka.id, group_id: g2.id,message:"I'm in here")
+p3 = Post.create(user_id: hal.id, group_id: g1.id, message:"I'm in here")
 
-c1 = Comment.create(user_id: rary.id, post_id:p3.id, message:"What??")
+
+#c1 = Comment.create(user_id: rary.id, post_id:p3.id, message:"What??")
 
 puts "done"
