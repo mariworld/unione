@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   skip_before_action :authorized, only: [:new, :create]
-  before_filter :authenticate_user!
-  before_filter :admin_only, :except => :show
   
+
+########################################### pre-auth-user-methods ################################  
   def new
     @user = User.new
   end
@@ -43,8 +43,8 @@ class UsersController < ApplicationController
  end
 
  private
-#  def user_params
-#   params.require(:user).permit(:username)
-#  end
+ def user_params
+  params.require(:user).permit(:username)
+ end
 
 end

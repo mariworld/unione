@@ -10,15 +10,17 @@ Group.destroy_all
 Comment.destroy_all
 Post.destroy_all
 
-g1 = Group.create(name: "The Dogans")
-g2 = Group.create(name: "Moon Lit")
 
-dert = User.create(username: "Derty", password_digest: "123")
-sarka = User.create(username: "Sarka", password_digest: "123")
-rary = User.create(username: "Rary", password_digest: "123")
-hal = User.create(username: "hal", password_digest: "123")
+
+dert = User.create(username: "Derty", password: "123")
+sarka = User.create(username: "Sarka", password: "123")
+rary = User.create(username: "Rary", password: "123")
+hal = User.create(username: "hal", password: "123")
 # taro = Artist.create(name: "Taro", age: 26)
 # jimmy = Artist.create(name: "Jimmy Lit", age: 27)
+
+g1 = Group.create(name: "The Dogans",owner_id: dert.id)
+g2 = Group.create(name: "Moon Lit",owner_id: hal.id)
 
 
 p1 = Post.create(user_id: dert.id, group_id: g1.id, message:"What's the dealll??")

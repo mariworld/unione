@@ -2,6 +2,10 @@
   <h1 style="color:pink; font-weight:bold;"><%= @group.name %></h1>
   <p style="color:pink;"><%= @group.description %></p>
 
+<% if @group.avatar.attached? %>
+    <img src="<%=(url_for(@group.avatar))%>">
+<%end%>
+
 
   <%# <%= button_to "Edit Unione", edit_group_path, method: :get%>
   <%# <%= button_to "Delete Unione", group_path, method: :delete%> 
@@ -27,7 +31,8 @@
 
   <div>
   <%= button_to "Create a Post", new_post_path, method: :get %>
-  <%= button_to "Log Out", logout_path, method: :delete%>
+  <%= button_to "View Your Profile", user_path(current_user), method: :get %>
   <%= button_to "Main Menu", welcome_path, method: :get%>
+  <%= button_to "Log Out", logout_path, method: :delete%>
   </div>
 </div>

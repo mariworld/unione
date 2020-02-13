@@ -16,6 +16,11 @@ class SessionsController < ApplicationController
  end
 
   def login
+    if !@user
+      flash[:errors] = flash[:errors].each do |error|
+        error.full_messages
+      end
+    end
   end
 
 #   def welcome

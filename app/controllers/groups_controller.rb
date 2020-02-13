@@ -20,11 +20,12 @@ class GroupsController < ApplicationController
 
   def edit
     @group = Group.find(params[:id])
+    @group.avatar.attach(params[:avatar])
   end
 
   def update
     @group = Group.find(params[:id])
-    @group.update(group_params)
+    @group.update(params.require(:group).permit(:username,:avatar))
     redirect_to group_path(@group)
   end
 
