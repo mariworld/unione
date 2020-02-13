@@ -1,15 +1,21 @@
 <%# <head>
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.css'>
 <head> %>
-<body style="color:pink;">
+
+<%= button_to "Back to Profile", user_path(@user), method: :get %>
+<%= button_to "Main Menu", welcome_path, method: :get%>
+
+<body style="color:pink;" >
 <h1><%= @user.username.upcase %>'s Posts</h1>
 <p><% @user.posts.each do |post|%>
+______________________________________________________________________
     <% if post.avatar.attached? %>
       <img src="<%=(url_for(post.avatar))%>">
       <%end%>
     <ul><%= link_to post.message, post_path(post) %> --> <%= link_to post.group.name, group_path(post.group) %></ul>
+    <%= button_to "View Post", post_path(post), method: :get%>
     <%= button_to "Delete Post", post_path(post), method: :delete %>
-
     <%end%>
+    ______________________________________________________________________
 </p>
 </body>
