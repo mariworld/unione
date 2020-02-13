@@ -1,9 +1,30 @@
 <h1> <%= @user.username %></h1>
 
 <%= button_to "Edit Your Profile", edit_user_path(@user), method: :get %>
-<%= button_to "Main Menu", welcome_path, method: :get%>
+<%= button_to "Create a Post", new_post_path, method: :get %>
+<%= button_to "View Your Posts", posts_path, method: :get %>
+
+
 <% if @user.avatar.attached? %>
     <img src="<%=(url_for(@user.avatar))%>">
     <%= button_to "Change Your Pic", edit_user_path(@user), method: :get %> 
 <%end%>
+
+<div class="FixedHeightContainer">
+    <h1 style="color:white;"><%= @user.username.titlecase %> said: </h1>
+    <div class="Content" style="font-size:16px;">
+      <% @user.posts.each do |post| %>
+______________________________________________________________________      
+      <% if post.avatar.attached? %>
+      <img src="<%=(url_for(post.avatar))%>">
+      <%end%>
+      <ul><%= post.message %> --> <%= post.group.name %></ul>
+      <%end%>
+______________________________________________________________________      
+    
+    </div>
+
+  </div><br>
+
+<%= button_to "Main Menu", welcome_path, method: :get%>
 <%= button_to "Log Out", logout_path, method: :delete%>

@@ -3,7 +3,10 @@
 
 <%= form_for @post do |f|%>
   <h2 style="color:pink;"><%= f.label :message%><br></h2>
+  Yo Message: <br>
   <%= f.text_field :message%><br>
-  <%= f.collection_select :group_id, Group.all, :id, :name%>
+   <%= f.label "Add Photo"%>
+  <%= f.file_field :avatar %><br>
+  Send Post to: <%= f.collection_select :group_id, Group.all, :id, :name%><br>
   <%= f.submit %>
 <%end%>

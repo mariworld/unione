@@ -14,7 +14,11 @@
     <p style="color:white;">Talk to <%= @group.name %> </p>
     <div class="Content" style="font-size:16px;">
       <% @group.posts.each do |post| %>
-      <ul><%= post.user.username %>: <%= post.message %></ul>
+      <ul><%= post.user.username %>: 
+      <% if post.avatar.attached? %>
+      <img src="<%=(url_for(post.avatar))%>">
+      <%end%>
+      <%= post.message %></ul>
       <%end%>
     
     </div>

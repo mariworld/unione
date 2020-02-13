@@ -4,7 +4,10 @@
 <body style="color:pink;">
 <h1><%= @user.username.upcase %>'s Posts</h1>
 <p><% @user.posts.each do |post|%>
-    <ul><%= post.message %> --> <%= link_to post.group.name, group_path(post.group) %></ul>
+    <% if post.avatar.attached? %>
+      <img src="<%=(url_for(post.avatar))%>">
+      <%end%>
+    <ul><%= link_to post.message, post_path(post) %> --> <%= link_to post.group.name, group_path(post.group) %></ul>
     <%= button_to "Delete Post", post_path(post), method: :delete %>
 
     <%end%>
