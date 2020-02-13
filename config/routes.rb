@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :characters, only: [:index,:new,:create,:edit,:update,:show,:destroy]
   
 
-  resources :users, only: [:new, :create, :edit, :update, :destroy]
+  resources :users, only: [:new, :create, :edit, :update, :destroy, :show]
   resources :groups, only: [:new, :create, :show, :update, :edit, :index, :destroy]
   # resources :groups do
   #   resources :posts, except: [:index], controller: "groups/posts"

@@ -13,7 +13,7 @@
 
 
   <div class="FixedHeightContainer">
-    <h2 style="color:white;">Talk to <%= @group.name %> </h2>
+    <p style="color:white;">Talk to <%= @group.name %> </p>
     <div class="Content" style="font-size:16px;">
       <% @group.posts.each do |post| %>
       <ul><%= post.user.username %>: <%= post.message %></ul>

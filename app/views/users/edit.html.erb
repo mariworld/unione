@@ -1,6 +1,10 @@
-<h1>Edit Username</h1>
+<h1>Edit Your Profile</h1>
    <%= form_for @user, url: {action: "update"} do |f| %>
    <%= f.label :username%>
    <%= f.text_field :username %>
+   <%= f.label "Profile Photo"%>
+  <%= f.file_field :avatar %>
    <%= submit_tag "Update"%>
 <%end%>
+<%= button_to "Main Menu", welcome_path, method: :get%>
+<%= button_to "Delete Profile", user_path(@user), method: :delete %>

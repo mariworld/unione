@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(params.require(:user).permit(:username,        
-    :password))
+    :password,:avatar))
     session[:user_id] = @user.id
     if @user.valid?
         redirect_to '/welcome'
@@ -20,13 +20,14 @@ class UsersController < ApplicationController
 
  def edit
   @user = User.find(params[:id])
+  @user.avatar.attach(params[:avatar])
  end
 
  def update
   @user = User.find(params[:id])
   #byebug
-  @user.update(params.require(:user).permit(:username))
-  redirect_to '/welcome'
+  @user.update(params.require(:user).permit(:username,:avatar))
+  redirect_to user_path(@user)
  end
 
  def show

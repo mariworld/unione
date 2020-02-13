@@ -9,11 +9,46 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%# <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"> %>
+    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-vader.css" type="text/css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <style>
+      body {margin: 5% auto; background: black; color: pink; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.8; text-shadow: 0 0px 0; max-width: 73%;}
+      code {background-image: white;}
+      a {border-bottom: 1px solid #444444; color: #444444; text-decoration: none;}
+      a:hover {border-bottom: 0;}
+      img {display: block;
+          max-width:500px;
+          max-height:180px;
+          width: auto;
+          height: auto;
+          }
+      .bordiv {
+          border-top-style: solid;
+          border-right-style: solid;
+          border-bottom-style: solid;
+          border-left-style: solid;
+          width: 300px;
+          height: 100px;
+          justify: center;
+          margin: 0 auto;
+          }
+      .bordiv h1 {
+        margin:auto;
+        line-height:51px;
+        vertical-align:middle;
+        font-size: 1.5em;
+        text-align: center;
+        padding-top: 20px;
+    }
+</style>
+<header>
+<div class="bordiv" >
+    <h1 style="color:pink; font-weight:bold; text-align:center;">UniOne</h1>
+</div>
+</header>
   </head>
   <body>
-  <div style="background-image:url('app/views/layouts/UniOne.png');">
+  <div>
     <section class="section has-background-black">
       <div class="container has-background-black">
         <h1 class="title">
