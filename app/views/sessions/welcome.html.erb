@@ -3,10 +3,10 @@
     <% if current_user.avatar.attached? %>
     <img src="<%=(url_for(current_user.avatar))%>">
 <%end%>
-    <%= button_to "Create a Unione Group", new_group_path, method: :get %>
+    <%= button_to "Create a UniOne Group", new_group_path, method: :get %>
     <%# <%= button_to "Create a Character", new_character_path, method: :get %>
     <%# <%= button_to "View Characters", characters_path, method: :get %> 
-    <%= button_to "View Uniones", groups_path, method: :get %>
+    <%= button_to "View UniOnes", groups_path, method: :get %>
     <%= button_to "Create a Post", new_post_path, method: :get %>
     <%= button_to "View Your Posts", posts_path, method: :get %>
     <%= button_to "View Your Profile", user_path(current_user), method: :get %>

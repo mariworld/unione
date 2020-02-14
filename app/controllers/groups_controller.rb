@@ -9,9 +9,10 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.create(group_params)
-    
-    redirect_to group_path(@group)
+    user_id = current_user.id
+    @group = Group.create(group_params.merge(owner_id: user_id))
+    @groups = Group.all
+    redirect_to groups_path
   end
 
   def show
@@ -25,7 +26,7 @@ class GroupsController < ApplicationController
 
   def update
     @group = Group.find(params[:id])
-    @group.update(params.require(:group).permit(:username,:avatar))
+    @group.update(params.require(:group).permit(:username,:avatar,:owner_id))
     redirect_to group_path(@group)
   end
 

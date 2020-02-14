@@ -1,14 +1,13 @@
-<h1>All Uniones</h1>
+<h1>All UniOnes</h1>
 <% @groups.each do |group| %>
 <h2 style="color:pink;"><ul> <%= link_to group.name, group_path(group) %> </ul></h2>
-<%= button_to "Check Out this Unione", group_path(group), method: :get%>
+<%= button_to "Check Out this UniOne", group_path(group), method: :get%>
 
-<% group.posts.each do |post|%>
-    <% if current_user.id == post.user.id %>
-    <%= button_to "Edit Your Unione", edit_group_path(group), method: :get%> 
-    <%= button_to "Delete Your Unione", group_path(group), method: :delete%> 
+
+    <% if current_user.id == group.owner_id %>
+    <%= button_to "Edit Your UniOne", edit_group_path(group), method: :get%> 
+    <%= button_to "Delete Your UniOne", group_path(group), method: :delete%> 
     <%end%>
-<%end%>
 
 
 <%end%><br>

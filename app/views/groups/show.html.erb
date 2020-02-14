@@ -18,18 +18,24 @@
     <p style="color:white;">Talk to <%= @group.name %> </p>
     <div class="Content" style="font-size:16px;">
       <% @group.posts.each do |post| %>
+___________________________________
       <ul><%= post.user.username %>: 
+        <%= post.message %></ul>
       <% if post.avatar.attached? %>
       <img src="<%=(url_for(post.avatar))%>">
       <%end%>
-      <%= post.message %></ul>
-      <%end%>
     
+
+      <%end%>
+___________________________________
     </div>
 
   </div><br>
 
   <div>
+  <% if current_user.id == @group.owner_id %>
+    <%= button_to "Edit Your UniOne", edit_group_path(@group), method: :get%>
+  <%end%>
   <%= button_to "Create a Post", new_post_path, method: :get %>
   <%= button_to "View Your Profile", user_path(current_user), method: :get %>
   <%= button_to "Main Menu", welcome_path, method: :get%>
