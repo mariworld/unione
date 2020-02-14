@@ -10,3 +10,6 @@
   Send Post to: <%= f.collection_select :group_id, Group.all, :id, :name%><br>
   <%= f.submit %>
 <%end%>
+
+<%= button_to "Main Menu", welcome_path, method: :get%>
+<%= button_to "Log Out", logout_path, method: :delete%>
