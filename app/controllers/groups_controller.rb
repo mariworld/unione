@@ -26,7 +26,7 @@ class GroupsController < ApplicationController
 
   def update
     @group = Group.find(params[:id])
-    @group.update(params.require(:group).permit(:username,:avatar,:owner_id))
+    @group.update(params.require(:group).permit(:username,:avatar,:owner_id,:name,:description))
     redirect_to group_path(@group)
   end
 

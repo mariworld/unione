@@ -1,10 +1,12 @@
 <h1>Edit Your Profile</h1>
-   <%= form_for @user, url: {action: "update"} do |f| %>
+<%= form_for @user do |f| %>
    <%= f.label :username%>
    <%= f.text_field :username %>
+
    <%= f.label "Profile Photo"%>
-  <%= f.file_field :avatar %><br>
-   <%= submit_tag "Update"%><br>
+   <%= f.file_field :avatar %><br>
+
+   <%=f.submit%><br>
 <%end%>
 
 <%= button_to "Main Menu", welcome_path, method: :get%>

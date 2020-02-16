@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'authorized', to: 'sessions#page_requires_login'
   delete 'logout', to: 'sessions#destroy'
   #get '/groups/:id/main_menu', to: 'groups#show'
+  #devise_for :users, controllers: { registrations: 'registrations' }
+
 
 ################## routes for users, groups, posts ##############
   resources :users, only: [:new, :create, :edit, :update, :destroy, :show]

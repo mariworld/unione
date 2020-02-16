@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   skip_before_action :authorized, only: [:new, :create]
+  #wrap_parameters :user, include: [:username, :password, :password_confirmation]
+
   
 
 ########################################### pre-auth-user-methods ################################  
@@ -8,8 +10,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(params.require(:user).permit(:username,        
-    :password,:avatar))
+    @user = User.create(user_params)
     session[:user_id] = @user.id
     if @user.valid?
         redirect_to '/welcome'
@@ -28,7 +29,8 @@ class UsersController < ApplicationController
  def update
   @user = User.find(params[:id])
   #byebug
-  @user.update(params.require(:user).permit(:username,:avatar))
+  #user_params.delete(:password)
+  @user.update!(params.require(:user).permit(:username))
   redirect_to user_path(@user)
  end
 
@@ -42,9 +44,9 @@ class UsersController < ApplicationController
   redirect_to "/welcome"
  end
 
- private
- def user_params
-  params.require(:user).permit(:username)
- end
+private
+  def user_params
+    params.require(:user).permit(:username,:password,:avatar)
+  end
 
 end
