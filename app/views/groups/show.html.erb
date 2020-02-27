@@ -1,8 +1,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div style="color:pink;">
-  <h2 style="color:pink; font-weight:bold;"><%= @group.name %></h2>
-  <p style="color:pink;"><%= @group.description %></p>
+<div style="color:black;">
+  <h2 style="color:black; font-weight:bold;"><%= @group.name %></h2>
+  <p style="color:black;"><%= @group.description %></p>
 
 <% if @group.avatar.attached? %>
     <img src="<%=(url_for(@group.avatar))%>">
@@ -17,8 +17,8 @@
 
 
   <div class="FixedHeightContainer">
-    <p style="color:white;">Talk to <%= @group.name %> </p>
-    <div class="Content" style="font-size:16px;">
+    <p style="color:black;">Talk to <%= @group.name %> </p>
+    <div class="Content" style="font-size:16px; color:white; background-color:black;">
       <% @group.posts.each do |post| %>
 ___________________________________
       <ul><%= post.user.username %>: 

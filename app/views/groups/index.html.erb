@@ -1,6 +1,6 @@
 <h1>All UniOnes</h1>
 <% @groups.each do |group| %>
-<h2 style="color:pink;"><ul> <%= link_to group.name, group_path(group) %> </ul></h2>
+<h2 style="color:black;"><ul> <%= link_to group.name, group_path(group) %> </ul></h2>
 <%= button_to "Check Out this UniOne", group_path(group), method: :get%>
 
 

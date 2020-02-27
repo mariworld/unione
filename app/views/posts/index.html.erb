@@ -5,7 +5,7 @@
 <%= button_to "Back to Profile", user_path(@user), method: :get %>
 <%= button_to "Main Menu", welcome_path, method: :get%>
 
-<body style="color:pink;" >
+<body style="color:black;" >
 <h1><%= @user.username.upcase %>'s Posts</h1>
 <p><% @user.posts.each do |post|%>
 ______________________________________________________________________

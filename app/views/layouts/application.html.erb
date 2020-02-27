@@ -13,9 +13,9 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <style>
 
-      body {margin: auto; background: black; color: pink; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.8; text-shadow: 0 0px 0; max-width: 500px;}
+      body {margin: auto; background: gold; color: black; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.8; text-shadow: 0 0px 0; max-width: 500px;}
       code {background-image: white;}
-      a {border-bottom: 5px solid yellow; color: pink; text-decoration: pink;}
+      a {border-bottom: 5px purple; color: black; text-decoration: black;}
       a:hover {border-bottom: 0;}
       img {display: block;
           max-width:500px;
@@ -47,10 +47,10 @@
       height: 400px;
       width:400px; 
       padding:3px; 
-      padding-top: 40px;
+      padding-top: 20px;
       padding-bottom: 20px;
-        background: pink;
-        position: absolute; top: 400px; right: 80px;
+        background: gold;
+        position: absolute; top: 200px; right: 80px;
     }
     .Content
     {
@@ -59,20 +59,20 @@
         background: black;
     }
 
-    .pink {
-      font-color: pink;
+    .black {
+      font-color: black;
     }
 </style>
 <header>
-<div class="bordiv" >
-    <h1 style="color:pink; font-weight:bold; text-align:center;"><%= link_to "UniOne", welcome_path %></h1>
+<div class="bordiv" style="margin: 0px auto;" >
+    <h1 style="color:black; font-weight:bold; text-align:center;"><%= link_to "UniOne", welcome_path %></h1>
 </div>
 </header>
   </head>
   <body>
   <div>
-    <section class="section has-background-black">
-      <div class="container has-background-black">
+    <section class="section has-background-white">
+      <div class="container has-background-white">
         <p class="title">
         </ul>
           </ul>
@@ -86,7 +86,7 @@
             <%end%>
             <%= yield %> 
       </p>
-        <p class="subtitle has-background-black">
+        <p class="subtitle has-background-white">
         </p>
       </div>
     </section>
